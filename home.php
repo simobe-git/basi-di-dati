@@ -20,7 +20,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Giochi</a></li>
             <li><a href="#">Offerte</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="login.php">Login</a></li>
             <li><a href="#">Contatti</a></li>
         </ul>
         <div class="hamburger-menu">
