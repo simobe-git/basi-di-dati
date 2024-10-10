@@ -36,26 +36,26 @@
           <p>Il miglior negozio di videogiochi online</p>
           <a href="#" class="cta-button">Scopri di più</a>
       </div>
-      <img src="isset/banner-image.jpg" alt="Immagine di Videogioco" class="additional-image">
+      <img src="../isset/banner-image.jpg" alt="Immagine di Videogioco" class="additional-image">
     </section>
 
     <section class="featured-games">
       <h2>Top 3 Videogiochi pi&uacute; venduti</h2>
       <div class="games-grid">
           <div class="game-card">
-              <img src="isset/game-image/fc25.jpg" alt="Gioco 1">
+              <img src="../isset/game-image/dragonball.jpg" alt="Gioco 1">
               <h3>Gioco 1</h3>
               <p>Descrizione breve del gioco 1.</p>
               <a href="#" class="cta-button">Acquista ora</a>
           </div>
           <div class="game-card">
-            <img src="isset/game-image/dragonball.jpg" alt="Gioco 1">
+            <img src="../isset/game-image/fc25.jpg" alt="Gioco 1">
             <h3>Gioco 1</h3>
             <p>Descrizione breve del gioco 2.</p>
             <a href="#" class="cta-button">Acquista ora</a>
         </div>
         <div class="game-card">
-          <img src="isset/game-image/headerthrone.jpg" alt="Gioco 1">
+          <img src="../isset/game-image/headerthrone.jpg" alt="Gioco 1">
           <h3>Gioco 1</h3>
           <p>Descrizione breve del gioco 3.</p>
           <a href="#" class="cta-button">Acquista ora</a>

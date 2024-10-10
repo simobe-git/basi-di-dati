@@ -85,7 +85,7 @@ body {
 }
 
 .hero-section {
-    background-image: url('isset/background-home.jpg');
+    background-image: url('../isset/background-home.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
