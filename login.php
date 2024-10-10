@@ -16,9 +16,29 @@ if(isset($_SESSION['statoLogin'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Nome del Sito</title>
-    <link rel="stylesheet" href="/css/login.css"> <!-- Collega il file CSS -->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">GameShop</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="#">Giochi</a></li>
+            <li><a href="#">Offerte</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="#">Contatti</a></li>
+        </ul>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
     <div class="login-container">
         <h2>Accedi al tuo account</h2>
         <form action="#" method="POST" class="login-form">

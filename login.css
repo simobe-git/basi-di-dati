@@ -1,9 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Colore di sfondo chiaro */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/*FORM DI LOGIN*/
 
 .login-container {
     max-width: 400px; /* Larghezza massima del contenitore */
