@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Colore di sfondo chiaro */
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px; /* Larghezza massima del contenitore */
+    margin: 100px auto; /* Centrato verticalmente */
+    padding: 20px;
+    background-color: #fff; /* Sfondo bianco per il contenitore */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra */
+}
+
+h2 {
+    text-align: center;
+    color: #333; /* Colore del testo */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Spazio tra i campi */
+}
+
+label {
+    display: block; /* Etichetta come blocco */
+    margin-bottom: 5px; /* Spazio sotto l'etichetta */
+    color: #555; /* Colore dell'etichetta */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Larghezza completa */
+    padding: 10px; /* Spaziatura interna */
+    border: 1px solid #ccc; /* Bordo grigio */
+    border-radius: 5px; /* Angoli arrotondati */
+    box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff6347; /* Colore del bordo al focus */
+}
+
+.cta-button {
+    width: 100%; /* Larghezza completa */
+    padding: 10px; /* Spaziatura interna */
+    background-color: #ff6347; /* Colore del pulsante */
+    color: white; /* Colore del testo del pulsante */
+    border: none; /* Nessun bordo */
+    border-radius: 5px; /* Angoli arrotondati */
+    cursor: pointer; /* Cambia il cursore */
+    transition: background-color 0.3s ease; /* Transizione per il colore */
+}
+
+.cta-button:hover {
+    background-color: #ff4500; /* Colore al passaggio del mouse */
+}
+
+.signup-link {
+    text-align: center; /* Centrato */
+    margin-top: 20px; /* Spazio sopra */
+}
+
+.signup-link a {
+    color: #ff6347; /* Colore del link */
+    text-decoration: none; /* Rimuovi sottolineatura */
+}
+
+.signup-link a:hover {
+    text-decoration: underline; /* Sottolinea al passaggio del mouse */
+}
