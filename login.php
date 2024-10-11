@@ -1,5 +1,12 @@
 
+<?php 
 
+session_start();
+if(isset($_SESSION['statoLogin'])){
+    header('Location: http://localhost/ServizioStreaming/php/home.php');
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="it">
