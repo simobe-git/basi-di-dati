@@ -1,13 +1,6 @@
-
-<?php 
-
+<?php
 session_start();
-if(isset($_SESSION['statoLogin'])){
-    header('Location: http://localhost/progetto-basi/basi-di-dati/home.php');
-    exit();
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -42,19 +35,18 @@ if(isset($_SESSION['statoLogin'])){
 
     <div class="login-container">
         <div class="login-form">
-            <h2>SIGN <span class="highlight">IN</span></h2>
-            <form action="login-form.php" method="POST">
+            <h2>RESET <span class="highlight">PASSWORD</span></h2>
+            <form action="reset-password-form.php" method="POST">
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder=" New password" required>
                 </div>
-                <div class="form-group check-forgot">
-                    <a href="reset-password.php">Forgot Password?</a>
+                <div class="form-group">
+                    <input type="password" id="password" name="Newpassword" placeholder="Repeat New password" required>
                 </div>
-                <button type="submit" name="login" class="cta-button">SIGN IN</button>
-                <p class="signup-link">Not a member? <a href="#">Sign Up</a></p>
+                <button type="submit" name="reset" class="cta-button">RESET</button>
             </form>
         </div>
         <div class="login-image">
