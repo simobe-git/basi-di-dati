@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*BARRA DI NAVIGAZIONE*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    border-radius: 5px; /* Riduzione dei bordi arrotondati */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Rende la barra di navigazione fissa */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assicura che rimanga sopra gli altri elementi */
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #fff;
+    padding: 5px 12px;
+    border-radius: 8px; /* Riduzione dei bordi arrotondati */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .logo a:hover {
+    background-color: #FFC600;
+    color: #000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    border: 2px solid transparent;
+    border-radius: 8px; /* Riduzione dei bordi arrotondati */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links li:hover {
+    background-color: #1a1a1a;
+    border-color: #FFC600;
+}
+
+.nav-links a:hover {
+    color: #FFC600;
+}
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Layout della pagina di contatto */
+.contact-page {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+/* Sezione sinistra con immagine di sfondo */
+.left-section {
+    background-image: url('../isset/background-contact.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    padding: 50px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.content h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    background-color: #FFC600;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Sezione destra con informazioni di contatto */
+.right-section {
+    background-color: #FFC600;
+    width: 50%;
+    padding: 50px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    width: 100%;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info ul li {
+    font-size: 18px;
+    margin-bottom: 20px; /* Aumenta lo spazio tra gli elementi */
+}
+
+.contact-info ul li strong {
+    font-weight: bold;
+}

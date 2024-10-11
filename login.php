@@ -31,7 +31,7 @@ if(isset($_SESSION['statoLogin'])){
             <?php else: ?>
                 <li><a href="login.php">Login</a></li>
             <?php endif; ?>
-            <li><a href="#">Contatti</a></li>
+            <li><a href="contatti.php">Contatti</a></li>
         </ul>
         <div class="hamburger-menu">
             <span></span>
