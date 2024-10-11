@@ -44,7 +44,7 @@ session_start();
                     <input type="password" id="password" name="password" placeholder=" New password" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="Newpassword" placeholder="Repeat New password" required>
+                    <input type="password" id="password" name="Newpassword" placeholder="Repeat new password" required>
                 </div>
                 <button type="submit" name="reset" class="cta-button">RESET</button>
             </form>
