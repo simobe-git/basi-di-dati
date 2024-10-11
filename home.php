@@ -20,7 +20,11 @@ session_start();
             <li><a href="#">Home</a></li>
             <li><a href="#">Giochi</a></li>
             <li><a href="#">Offerte</a></li>
-            <li><a href="login.php">Login</a></li>
+            <?php if(isset($_SESSION['statoLogin'])) : ?>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php">Login</a></li>
+            <?php endif; ?>
             <li><a href="#">Contatti</a></li>
         </ul>
         <div class="hamburger-menu">
