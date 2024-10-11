@@ -51,10 +51,10 @@ if(isset($_SESSION['statoLogin'])){
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-group check-forgot">
-                    <a href="reset-password.php">Forgot Password?</a>
+                    <a href="reset-password.php">Password dimenticata?</a>
                 </div>
                 <button type="submit" name="login" class="cta-button">SIGN IN</button>
-                <p class="signup-link">Not a member? <a href="#">Sign Up</a></p>
+                <p class="signup-link">Non sei iscritto? <a href="registration.php">Sign Up</a></p>
             </form>
         </div>
         <div class="login-image">

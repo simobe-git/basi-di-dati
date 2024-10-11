@@ -2,7 +2,7 @@
 session_start();
 require_once"connessione.php";
 
-//controlla tasto reset premuto e metodo post
+//controlla tasto reset premuto e metodo form è post
 if(isset($_POST['reset']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
     //controlla che il campo email non sia vuoto
@@ -10,7 +10,7 @@ if(isset($_POST['reset']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $email = $_POST['email'];
 
-        //controlla che il formato dell email sia corretta ""
+        //controlla che il formato dell email sia del tipo "nomemail@dominio"
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
 
             

@@ -1,13 +1,20 @@
 <?php
 session_start();
+
+//se utente ha effettuato il login non gli pemettiamo di accedere alla pagina di registrazione
+if(isset($_SESSION['statoLogin'])){
+    header('Location: http://localhost/progetto-basi/basi-di-dati/home.php');
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="reset.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="registration.css">
 </head>
 <body>
     
@@ -35,18 +42,19 @@ session_start();
 
     <div class="login-container">
         <div class="login-form">
-            <h2>RESET <span class="highlight">PASSWORD</span></h2>
-            <form action="reset-password-form.php" method="POST">
+            <h2>CREA UN <span class="highlight">ACCOUNT</span></h2>
+            <form action="registration-form.php" method="POST">
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder=" New password" required>
+                    <input type="text" id="username" name="username" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="Newpassword" placeholder="Repeat new password" required>
+                    <input type="password" id="password" name="password" placeholder="Repeat new password" required>
                 </div>
-                <button type="submit" name="reset" class="cta-button">RESET</button>
+                <button type="submit" name="registerBtn" class="cta-button">REGISTRATI</button>
+                <p class="signup-link">Hai un account? <a href="login.php">Login</a></p>
             </form>
         </div>
         <div class="login-image">

@@ -35,14 +35,14 @@ body {
 }
 
 .login-form .highlight {
-    color: #ff6347; /* Colore per la parola "IN" */
+    color: #2980b9; /* Colore per la parola "IN" */
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"], input[type="text"], input[type="password"] {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
@@ -52,8 +52,8 @@ input[type="email"], input[type="password"] {
     transition: border-color 0.3s;
 }
 
-input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #ff6347;
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #2980b9;
 }
 
 .check-forgot {
@@ -65,7 +65,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 }
 
 .check-forgot a {
-    color: #ff6347;
+    color: #2980b9;
     text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 .cta-button {
     width: 100%;
     padding: 15px;
-    background-color: #ff6347;
+    background-color: #2980b9;
     color: white;
     border: none;
     border-radius: 5px;
@@ -86,7 +86,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 }
 
 .cta-button:hover {
-    background-color: #ff6347;
+    background-color: #2980b9;
 }
 
 .or-divider {
@@ -118,7 +118,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 }
 
 .signup-link a {
-    color: #ff6347;
+    color: #2980b9;
     text-decoration: none;
 }
 
@@ -128,7 +128,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 
 .login-image {
     width: 50%;
-    background-color: #ff6347;
+    background-color: #2980b9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +167,7 @@ input[type="email"]:focus, input[type="password"]:focus {
 }
 
 .navbar .logo a:hover {
-    background-color: #ff6347;
+    background-color: #2980b9;
     color: #000;
 }
 
@@ -194,14 +194,15 @@ input[type="email"]:focus, input[type="password"]:focus {
 
 .nav-links li:hover {
     background-color: #1a1a1a;
-    border-color: #ff6347;
+    border-color: #2980b9;
 }
 
 .nav-links a:hover {
-    color: #ff6347;
+    color: #2980b9;
 }
 .hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
 }
+
