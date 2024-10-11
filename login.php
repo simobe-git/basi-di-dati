@@ -1,13 +1,6 @@
-<?php
 
-// Controllo se utente ha effettuato il login se si  lo reindirizzo alla pagina di home  
-session_start();
-if(isset($_SESSION['statoLogin'])){
-    header('Location: home.php');
-    exit();
-}
 
-?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -39,18 +32,17 @@ if(isset($_SESSION['statoLogin'])){
     <div class="login-container">
         <div class="login-form">
             <h2>SIGN <span class="highlight">IN</span></h2>
-            <form action="#" method="POST">
+            <form action="login-form.php" method="POST">
                 <div class="form-group">
-                    <input type="text" id="username" name="username" placeholder="Username or Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
                     <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div class="form-group check-forgot">
-                    <label><input type="checkbox"> Stay signed in</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="cta-button">SIGN IN</button>
+                <button type="submit" name="login" class="cta-button">SIGN IN</button>
                 <p class="signup-link">Not a member? <a href="#">Sign Up</a></p>
             </form>
         </div>

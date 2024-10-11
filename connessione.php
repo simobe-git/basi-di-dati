@@ -7,7 +7,7 @@
 
 require_once("dati-connessione.php");   
 
-$connessione = mysqli_connect($hostname,$user,$password);
+$connessione = mysqli_connect($hostname,$user,$password,$db);
 
 if(mysqli_connect_errno()){
 
