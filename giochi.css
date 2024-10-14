@@ -1,0 +1,118 @@
+/* Resetta gli stili di default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    padding: 40px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #222;
+}
+
+/* Griglia degli articoli con tre colonne */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
+    gap: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Articolo singolo */
+.product-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+.product-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: 500;
+}
+
+.product-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-item .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.product-item .btn-add-to-cart {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item .btn-add-to-cart:hover {
+    background-color: #ff5252;
+    transform: translateY(-5px);
+}
+
+/* Adattamenti responsive */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonne per schermi medi */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 colonna per schermi piccoli */
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+
+
