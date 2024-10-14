@@ -17,9 +17,9 @@ session_start();
             <a href="#">GameShop</a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Giochi</a></li>
-            <li><a href="#">Offerte</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="giochi.php">Giochi</a></li>
+            <li><a href="offerte.php">Offerte</a></li>
             <?php if(isset($_SESSION['statoLogin'])) : ?>
                 <li><a href="logout.php">Logout</a></li>
             <?php else: ?>
