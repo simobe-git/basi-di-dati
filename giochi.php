@@ -4,6 +4,12 @@ session_start();
 // non viene eseguito il controllo sullo stato login poiché un utente 
 // può accedere al catalogo in modo anonimo ma per effettuare acquisti 
 // dovrà necessariamente identificarsi
+
+require_once"connessione.php";
+
+$sql = "SELECT * FROM videogiochi";
+$result = mysqli_query($connessione,$sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -16,27 +22,52 @@ session_start();
 <body>
     <!-- Barra di navigazione -->
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Negozio</a></li>
-            <li><a href="contact.html">Contatti</a></li>
+        <div class="logo">
+            <a href="#">GameShop</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="giochi.php">Giochi</a></li>
+            <li><a href="offerte.php">Offerte</a></li>
+            <?php if(isset($_SESSION['statoLogin'])) : ?>
+                <li><a href="logout.php">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php">Login</a></li>
+            <?php endif; ?>
+            <li><a href="contatti.php">Contatti</a></li>
         </ul>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
-
+    
     <!-- Titolo della pagina -->
     <header class="shop-header">
         <h1>Tutti gli Articoli</h1>
     </header>
 
     <div class="product-grid">
-        <div class="product-item">
-            <img src="product1.jpg" alt="Product 1">
-            <h3>Nome del Prodotto 1</h3>
-            <p>Breve descrizione del prodotto 1.</p>
-            <span class="price">€ 49,99</span>
-            <a href="#" class="btn-add-to-cart">Aggiungi al carrello</a>
-        </div>
-        <!-- Aggiungi altri prodotti -->
+        <?php
+            if(mysqli_num_rows($result) > 0){
+
+                while($row = mysqli_fetch_assoc($result)){
+                    
+                    echo '<div class="product-item">';
+                    echo '<img src="' . $row['immagine'] . '" alt="' . $row['nome'] . '">';
+                    echo '<h3>' . $row['nome'] . '</h3>';
+                    echo '<p class="price">';
+                    echo '<span class="current-price">€ ' . $row['prezzo_attuale'] . '</span>';
+                    echo ' <span class="original-price">€ ' . $row['prezzo_originale'] . '</span>';
+                    echo '</p>';
+                    echo '<a href="#" class="btn-acquista">Acquista</a>';
+                    echo '</div>';
+                }
+            }else{
+                echo '<p>Nessun prodotto trovato</p>';
+            }
+        ?>
     </div>
     
 </body>
