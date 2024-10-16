@@ -73,10 +73,10 @@ $result = mysqli_query($connessione,$sql);
                     }
 
                     echo '</p>';
-                    
+
                     //passaggio del codice di ogni gioco 
                     //in modo da potervi creare una pagina per le informazioni  
-                    echo '<a href="pagina-videogiocho.php?id='.$row['codice'].'" class="btn-acquista">Acquista</a>';
+                    echo '<a href="pagina-videogioco.php?id='.$row['codice'].'" class="btn-acquista">Acquista</a>';
                     echo '</div>';
 
                 }
