@@ -20,7 +20,7 @@ $result = mysqli_query($connessione,$sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutti gli Articoli del Negozio</title>
-    <link rel="stylesheet" href="giochi.css">
+    <link rel="stylesheet" href="pagina-videogioco.css">
 </head>
 <body>
     <!-- Barra di navigazione -->
@@ -51,18 +51,6 @@ $result = mysqli_query($connessione,$sql);
         <h1>Tutti gli Articoli</h1>
     </header>
 
-    <div class="product-grid">
-        
-        <?php
-            //controlla se query precedente restituisce un risultato
-            if(mysqli_num_rows($result) == 1){
-
-                echo'PROVA';
-            }else{
-                echo '<p>Nessun prodotto trovato</p>';
-            }
-        ?>
-    </div>
     
 </body>
 </html>
