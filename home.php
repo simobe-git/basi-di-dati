@@ -44,24 +44,24 @@ session_start();
     </section>
 
     <section class="featured-games">
-      <h2>Top 3 Videogiochi pi&uacute; venduti</h2>
+      <h2>Solo il meglio per i nostri utenti</h2>
       <div class="games-grid">
           <div class="game-card">
-              <img src="../isset/game-image/dragonball.jpg" alt="Gioco 1">
-              <h3>Gioco 1</h3>
-              <p>Descrizione breve del gioco 1.</p>
+              <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1790600/header.jpg?t=1728899148" alt="Gioco 1">
+              <h3>DRAGON BALL: Sparking! ZERO</h3>
+              <p> Stringi nelle mani la potenza distruttiva dei guerrieri più potenti dell'universo di DRAGON BALL</p>
               <a href="#" class="cta-button">Acquista ora</a>
           </div>
           <div class="game-card">
-            <img src="../isset/game-image/fc25.jpg" alt="Gioco 1">
-            <h3>Gioco 1</h3>
-            <p>Descrizione breve del gioco 2.</p>
+            <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2669320/header.jpg?t=1728642725" alt="Gioco 1">
+            <h3>FC 25</h3>
+            <p> Fai squadra con gli amici nelle tue modalità preferite</p>
             <a href="#" class="cta-button">Acquista ora</a>
         </div>
         <div class="game-card">
-          <img src="../isset/game-image/headerthrone.jpg" alt="Gioco 1">
-          <h3>Gioco 1</h3>
-          <p>Descrizione breve del gioco 3.</p>
+          <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2429640/header.jpg?t=1728522618" alt="Gioco 1">
+          <h3>THRONE AND LIBERTY</h3>
+          <p>PvPvE su vasta scala e la possibilità di trasformarsi in creature per combattere sulla terra, in mare e in aria.</p>
           <a href="#" class="cta-button">Acquista ora</a>
       </div>
       </div>
