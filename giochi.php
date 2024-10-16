@@ -55,11 +55,23 @@ $result = mysqli_query($connessione,$sql);
                 while($row = mysqli_fetch_assoc($result)){
                     
                     echo '<div class="product-item">';
-                    echo '<img src="' . $row['immagine'] . '" alt="' . $row['nome'] . '">';
+
+                    // Mostra l'immagine richiamando il link nel database
+                    echo '<img src="' . $row['immagine'] . '" alt="' . $row['nome'] . '">';                                    
+                    
                     echo '<h3>' . $row['nome'] . '</h3>';
                     echo '<p class="price">';
-                    echo '<span class="current-price">€ ' . $row['prezzo_attuale'] . '</span>';
-                    echo ' <span class="original-price">€ ' . $row['prezzo_originale'] . '</span>';
+
+                    //se il prezzo non subisce alcuno sconto stampo quello di partenza 
+                    //altrimenti mostro la variazione di prezzo da originale ad attuale
+                    if($row['prezzo_attuale'] == $row['prezzo_originale']){
+                        echo ' <span class="current-price">€ ' . $row['prezzo_originale'] . '</span>';
+                    }else{
+                        
+                        echo '<span class="original-price">€ ' . $row['prezzo_originale'] . '</span>';
+                        echo ' <span class="current-price">€ ' . $row['prezzo_attuale'] . '</span>';
+                    }
+
                     echo '</p>';
                     echo '<a href="#" class="btn-acquista">Acquista</a>';
                     echo '</div>';
