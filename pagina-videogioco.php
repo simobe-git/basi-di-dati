@@ -6,11 +6,18 @@ require_once("connessione.php");
 //Si controlla se l'utente ha effettuato il login solo quando preme sul pulsante per acquistare  
 
 $id = $_GET['id'];
-echo $id;
+//echo $id;
 
 //ricerca videogioco con codice passato dalla pagina giochi.php
 $sql = "SELECT * FROM videogiochi WHERE codice=$id";
 $result = mysqli_query($connessione,$sql);
+
+if(mysqli_num_rows($result) == 1){
+
+    $row = mysqli_fetch_assoc($result);
+}else{
+    echo '<p>Nessun prodotto trovato</p>'. mysqli_error($connessione,$result);
+}
 
 ?>
 
@@ -19,8 +26,8 @@ $result = mysqli_query($connessione,$sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutti gli Articoli del Negozio</title>
-    <link rel="stylesheet" href="pagina-videogioco.css">
+    <title><?php echo($row['nome']) ?></title>
+    <link rel="stylesheet" href="giochi.css">
 </head>
 <body>
     <!-- Barra di navigazione -->
@@ -46,11 +53,27 @@ $result = mysqli_query($connessione,$sql);
         </div>
     </nav>
     
-    <!-- Titolo della pagina -->
-    <header class="shop-header">
-        <h1>Tutti gli Articoli</h1>
-    </header>
-
+<!-- Dettagli del Prodotto -->
+    <div class="product-details">
+        <h1><?php echo $row['nome']; ?></h1>
+        <div class="product-content">
+            <div class="product-image">
+                <img src="<?php echo $row['immagine'] ?>">
+            </div>
+            <div class="product-info">
+                <p><strong>Prezzo attuale:</strong> € <?php echo $row['prezzo_attuale']; ?></p>
+                <p><strong>Prezzo originale:</strong> € <?php echo $row['prezzo_originale']; ?></p>
+                <p><strong>Lingua originale:</strong> <?php echo $row['lingua_originale'] ?></p>
+                <p><strong>Studio:</strong> <?php echo $row['nome_studio']; ?></p>
+                <p><strong>Editore:</strong> <?php echo $row['nome_editore'] ?></p>
+                <p><strong>Genere:</strong> <?php echo $row['genere'] ?></p>
+                <p><strong>Data rilascio:</strong> <?php echo $row['data_rilascio'] ?></p>
+                <p><strong>Pegi:</strong> <?php echo $row['id_pegi'] ?></p>
+                
+                <a href="pagamento.php" class="btn-acquista">Acquista Ora</a>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
