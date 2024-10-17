@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 08, 2024 alle 15:17
+-- Creato il: Ott 16, 2024 alle 17:48
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -60,12 +60,12 @@ CREATE TABLE `console` (
 --
 
 INSERT INTO `console` (`nome`, `esclusiva`) VALUES
+('nintendo switch', 0),
 ('playstation 3', 0),
 ('playstation 4', 0),
 ('playstation 5', 0),
-('xbox 360', 0),
 ('playstation 5 slim', 0),
-('nintendo switch', 0),
+('xbox 360', 0),
 ('xbox one', 0),
 ('xbox series x', 0);
 
@@ -214,24 +214,63 @@ INSERT INTO `studi` (`nome`, `sede`, `nome_editore`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `supportatoconsole`
+-- Struttura della tabella `supportato_console`
 --
 
-CREATE TABLE `supportatoconsole` (
+CREATE TABLE `supportato_console` (
   `nome_console` varchar(30) NOT NULL,
   `codice_videogioco` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dump dei dati per la tabella `supportato_console`
+--
+
+INSERT INTO `supportato_console` (`nome_console`, `codice_videogioco`) VALUES
+('nintendo switch', 11112),
+('playstation 3', 11111),
+('playstation 4', 11111),
+('playstation 4', 11223),
+('playstation 4', 55321),
+('playstation 5', 11111),
+('playstation 5', 11112),
+('playstation 5', 11223),
+('playstation 5', 43712),
+('playstation 5', 55321),
+('playstation 5 slim', 11111),
+('playstation 5 slim', 11223),
+('xbox 360', 55321),
+('xbox one', 43712),
+('xbox series x', 11112);
+
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `supportatopc`
+-- Struttura della tabella `supportato_pc`
 --
 
-CREATE TABLE `supportatopc` (
-  `codice_videogioco` int(5) NOT NULL,
-  `id_pc` int(5) NOT NULL
+CREATE TABLE `supportato_pc` (
+  `id_pc` int(5) NOT NULL,
+  `codice_videogioco` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dump dei dati per la tabella `supportato_pc`
+--
+
+INSERT INTO `supportato_pc` (`id_pc`, `codice_videogioco`) VALUES
+(19289, 11112),
+(32613, 11111),
+(32613, 11112),
+(32613, 11223),
+(32613, 43712),
+(32613, 55321),
+(73543, 43712),
+(73543, 55321),
+(75411, 11223),
+(75411, 55321),
+(82821, 11112),
+(82821, 43712);
 
 -- --------------------------------------------------------
 
@@ -302,6 +341,12 @@ ALTER TABLE `comprano`
   ADD KEY `email_utente` (`email_utente`) USING BTREE;
 
 --
+-- Indici per le tabelle `console`
+--
+ALTER TABLE `console`
+  ADD PRIMARY KEY (`nome`);
+
+--
 -- Indici per le tabelle `contenuti_aggiuntivi`
 --
 ALTER TABLE `contenuti_aggiuntivi`
@@ -342,19 +387,20 @@ ALTER TABLE `studi`
   ADD KEY `nome_editore_ibfk_1` (`nome_editore`);
 
 --
--- Indici per le tabelle `supportatoconsole`
+-- Indici per le tabelle `supportato_console`
 --
-ALTER TABLE `supportatoconsole`
+ALTER TABLE `supportato_console`
   ADD PRIMARY KEY (`nome_console`,`codice_videogioco`),
-  ADD KEY `nome_console` (`nome_console`),
-  ADD KEY `codice_videogioco` (`codice_videogioco`);
+  ADD KEY `nome_console_fk1` (`nome_console`),
+  ADD KEY `codice_videogioco_fk1` (`codice_videogioco`);
 
 --
--- Indici per le tabelle `supportatopc`
+-- Indici per le tabelle `supportato_pc`
 --
-ALTER TABLE `supportatopc`
-  ADD KEY `codice_videogioco_fk_1` (`codice_videogioco`),
-  ADD KEY `id_pc_fk_2` (`id_pc`);
+ALTER TABLE `supportato_pc`
+  ADD PRIMARY KEY (`id_pc`,`codice_videogioco`),
+  ADD KEY `id_pc_fk1` (`id_pc`),
+  ADD KEY `codice_videogioco_fk2` (`codice_videogioco`);
 
 --
 -- Indici per le tabelle `utenti`
@@ -416,6 +462,20 @@ ALTER TABLE `recensioni`
 --
 ALTER TABLE `studi`
   ADD CONSTRAINT `nome_editore_ibfk_1` FOREIGN KEY (`nome_editore`) REFERENCES `editori` (`nome`);
+
+--
+-- Limiti per la tabella `supportato_console`
+--
+ALTER TABLE `supportato_console`
+  ADD CONSTRAINT `codice_videogioco_fk2` FOREIGN KEY (`codice_videogioco`) REFERENCES `videogiochi` (`codice`),
+  ADD CONSTRAINT `nome_console_fk1` FOREIGN KEY (`nome_console`) REFERENCES `console` (`nome`);
+
+--
+-- Limiti per la tabella `supportato_pc`
+--
+ALTER TABLE `supportato_pc`
+  ADD CONSTRAINT `codice_videogioco_ibfk` FOREIGN KEY (`codice_videogioco`) REFERENCES `videogiochi` (`codice`),
+  ADD CONSTRAINT `id_pc_fk1` FOREIGN KEY (`id_pc`) REFERENCES `pc` (`id`);
 
 --
 -- Limiti per la tabella `videogiochi`
