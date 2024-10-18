@@ -314,7 +314,7 @@ CREATE TABLE `videogiochi` (
   `data_rilascio` date NOT NULL,
   `id_pegi` int(5) NOT NULL,
   `nome_studio` varchar(30) NOT NULL,
-  `nome_editore` varchar(30) NOT NULL
+  `nome_editore` varchar(30) NOT NULL,
   `immagine` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
