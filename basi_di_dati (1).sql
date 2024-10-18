@@ -315,18 +315,19 @@ CREATE TABLE `videogiochi` (
   `id_pegi` int(5) NOT NULL,
   `nome_studio` varchar(30) NOT NULL,
   `nome_editore` varchar(30) NOT NULL
+  `immagine` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dump dei dati per la tabella `videogiochi`
 --
 
-INSERT INTO `videogiochi` (`codice`, `nome`, `lingua_originale`, `prezzo_originale`, `prezzo_attuale`, `genere`, `data_rilascio`, `id_pegi`, `nome_studio`, `nome_editore`) VALUES
-(11111, 'Grand Theft Auto IV', 'Italiano', 79.99, 69.99, 'Azione', '2014-10-02', 3, 'Tencent', 'Codemasters'),
-(11112, 'Marvel Heroes 2015', 'Inglese', 59.99, 39.99, 'Azione', '2015-07-15', 2, 'Konami', 'Sony'),
-(11223, 'Far Cry 3', 'Inglese', 84.99, 69.99, 'Avventura', '2018-12-18', 3, 'SEGA', 'Microsoft'),
-(43712, 'Fallout 4', 'Francese', 84.99, 79.99, 'Avventura', '2020-02-04', 4, 'SEGA', 'Microsoft'),
-(55321, 'FC 25', 'Italiano', 74.49, 74.99, 'Sport', '2024-09-10', 1, 'EA', 'Codemasters');
+INSERT INTO `videogiochi` (`codice`, `nome`, `lingua_originale`, `prezzo_originale`, `prezzo_attuale`, `genere`, `data_rilascio`, `id_pegi`, `nome_studio`, `nome_editore`, `immagine`) VALUES
+(11111, 'Grand Theft Auto IV', 'Italiano', 79.99, 79.99, 'Azione', '2014-10-02', 3, 'Tencent', 'Codemasters', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1726606628'),
+(11112, 'Counter-Strike 2', 'Inglese', 59.99, 59.99, 'Azione', '2015-07-15', 2, 'Konami', 'Sony', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1719426374'),
+(11223, 'Far Cry 3', 'Inglese', 84.99, 69.99, 'Avventura', '2018-12-18', 3, 'SEGA', 'Microsoft', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220240/header.jpg?t=1682960396'),
+(43712, 'Fallout 4', 'Francese', 84.99, 79.99, 'Avventura', '2020-02-04', 4, 'SEGA', 'Microsoft', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/377160/header.jpg?t=1726758475'),
+(55321, 'FC 25', 'Italiano', 74.49, 74.00, 'Sport', '2024-09-10', 1, 'EA', 'Codemasters', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2669320/header.jpg?t=1728642725');
 
 --
 -- Indici per le tabelle scaricate
