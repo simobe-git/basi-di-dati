@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@
             <div class="content">
                 <h2>Tutto quello che cerchi</h2>
                 <p>Il nostro catalogo pu&oacute; soddifare qualsiasi esigenza</p>
-                <a href="catalogo.php" class="learn-more-btn">VAI AL CATALOGO</a>
+                <a href="giochi.php" class="learn-more-btn">VAI AL CATALOGO</a>
             </div>
         </div>
 
@@ -52,7 +52,6 @@
                 <h2>Contact Us</h2>
                 <p>In caso di problemi non esitare a contattarci:</p>
                 <ul>
-                    <li><strong>Indirizzo:</strong> Via Roma, 123, 00100 Roma, Italia</li>
                     <li><strong>Email:</strong> info@vibrant.com</li>
                     <li><strong>Telefono:</strong> +39 06 12345678</li>
                     <li><strong>Orari di apertura:</strong> Lun - Ven: 9:00 - 18:00</li>

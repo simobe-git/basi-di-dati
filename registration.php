@@ -3,7 +3,7 @@ session_start();
 
 //se utente ha effettuato il login non gli pemettiamo di accedere alla pagina di registrazione
 if(isset($_SESSION['statoLogin'])){
-    header('Location: http://localhost/progetto-basi/basi-di-dati/home.php');
+    header('Location: home.php');
     exit();
 }
 ?>
@@ -51,14 +51,14 @@ if(isset($_SESSION['statoLogin'])){
                     <input type="text" id="username" name="username" placeholder="Nome" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="Repeat new password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <button type="submit" name="registerBtn" class="cta-button">REGISTRATI</button>
                 <p class="signup-link">Hai un account? <a href="login.php">Login</a></p>
             </form>
         </div>
         <div class="login-image">
-            <img src="../isset/background-login.jpg" alt="background">
+            <img src="isset/background-login.jpg" alt="background">
         </div>
     </div>
 </body>

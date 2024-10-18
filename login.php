@@ -3,7 +3,7 @@
 
 session_start();
 if(isset($_SESSION['statoLogin'])){
-    header('Location: http://localhost/progetto-basi/basi-di-dati/home.php');
+    header('Location: home.php');
     exit();
 }
 ?>
@@ -58,7 +58,7 @@ if(isset($_SESSION['statoLogin'])){
             </form>
         </div>
         <div class="login-image">
-            <img src="../isset/background-login.jpg" alt="background">
+            <img src="isset/background-login.jpg" alt="background">
         </div>
     </div>
 </body>

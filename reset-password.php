@@ -50,7 +50,7 @@ session_start();
             </form>
         </div>
         <div class="login-image">
-            <img src="../isset/background-login.jpg" alt="background">
+            <img src="isset/background-login.jpg" alt="background">
         </div>
     </div>
 </body>

@@ -25,7 +25,7 @@ if(isset($_POST['registerBtn']) && $_SERVER['REQUEST_METHOD'] === 'POST'){
 
                 //verifica se aggiunta andata bene
                 if(mysqli_query($connessione,$sql)){
-                    header("Location: http://localhost/progetto-basi/basi-di-dati/login.php");
+                    header('Location: login.php');
                     exit();
                 }else{
                     echo "Errore".$sql.mysqli_error($connessione);

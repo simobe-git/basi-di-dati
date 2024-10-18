@@ -31,7 +31,7 @@ if(isset($_POST['reset']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
                     
                     if(mysqli_query($connessione,$old_password)){
 
-                        header('Location: http://localhost/progetto-basi/basi-di-dati/login.php');
+                        header('Location: login.php');
                         exit();
                         
                     }else{

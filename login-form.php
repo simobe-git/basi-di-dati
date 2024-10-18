@@ -18,7 +18,7 @@ if(isset($_POST['login']) && $_SERVER["REQUEST_METHOD"] === "POST"){
         //con un array che conterrà gli elemeti della riga
 
         $_SESSION['statoLogin'] = true;
-        header('Location: http://localhost/progetto-basi/basi-di-dati/home.php');
+        header('Location: home.php');
         exit();
     }
 }else{

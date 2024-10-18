@@ -93,7 +93,7 @@ body {
 
 /* Sezione sinistra con immagine di sfondo */
 .left-section {
-    background-image: url('../isset/background-contact.jpg');
+    background-image: url('isset/background-contact.jpg');
     background-size: cover;
     background-position: center;
     width: 50%;
