@@ -72,7 +72,7 @@ if(mysqli_num_rows($result) == 1){
                 <p><strong>Data rilascio:</strong> <?php echo $row['data_rilascio'] ?></p>
                 <p><strong>Pegi:</strong> <?php echo $row['id_pegi'] ?></p>
                 
-                <a href="carrello.php" name="pagamento" class="btn-acquista">AGGIUNGI AL CARRELLO</a>
+                <a href="carrello.php" name="pagamento" class="btn-acquista">ACQUISTA</a>
             </div>
         </div>
     </div>
