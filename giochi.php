@@ -89,7 +89,8 @@ $result = $connessione->query($query);
                         <form method="POST" action="aggiungi-carrello.php">
                             <input type="hidden" name="gioco" value="<?php echo $row['nome']; ?>">
                             <input type="hidden" name="prezzo" value="<?php echo $row['prezzo_attuale']; ?>">
-                            <button type="submit"name="codice" value="<?php echo $row['codice']?>">Aggiungi al Carrello</button>
+                            <button type="submit"name="codice" value="<?php echo $row['codice']?>">Acquista</button>
+                            <button type="submit"name="codice" value="<?php echo $row['codice']?>">Dettagli</button>
                         </form>
                     </div>
                 <?php endwhile; ?>
