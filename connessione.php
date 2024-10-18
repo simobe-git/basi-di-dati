@@ -11,7 +11,7 @@ $connessione = mysqli_connect($hostname,$user,$password,$db);
 
 if(mysqli_connect_errno()){
 
-    printf("Errore di connessione: %s\n",mysqli_connect_error($connessione));
+    printf("Errore di connessione: %s\n",mysqli_connect_error());
     exit();
 }
 
