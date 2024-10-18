@@ -40,7 +40,7 @@ session_start();
           <p>Il miglior negozio di videogiochi online</p>
           <a href="#" class="cta-button">Scopri di più</a>
       </div>
-      <img src="../isset/banner-image.jpg" alt="Immagine di Videogioco" class="additional-image">
+      <img src="isset/banner-image.jpg" alt="Immagine di Videogioco" class="additional-image">
     </section>
 
     <section class="featured-games">
