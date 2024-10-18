@@ -6,6 +6,8 @@ require_once("connessione.php");
 //Si controlla se l'utente ha effettuato il login solo quando preme sul pulsante per acquistare  
 
 $id = $_GET['id'];
+
+$_SESSION['id'] = $id; //serve per passare codice videogioco a pagamento.php
 //echo $id;
 
 //ricerca videogioco con codice passato dalla pagina giochi.php
@@ -70,7 +72,7 @@ if(mysqli_num_rows($result) == 1){
                 <p><strong>Data rilascio:</strong> <?php echo $row['data_rilascio'] ?></p>
                 <p><strong>Pegi:</strong> <?php echo $row['id_pegi'] ?></p>
                 
-                <a href="pagamento.php" name="pagamento" class="btn-acquista">Acquista Ora</a>
+                <a href="carrello.php" name="pagamento" class="btn-acquista">AGGIUNGI AL CARRELLO</a>
             </div>
         </div>
     </div>
