@@ -52,7 +52,6 @@
                 <h2>Contact Us</h2>
                 <p>In caso di problemi non esitare a contattarci:</p>
                 <ul>
-                    <li><strong>Indirizzo:</strong> Via Roma, 123, 00100 Roma, Italia</li>
                     <li><strong>Email:</strong> info@vibrant.com</li>
                     <li><strong>Telefono:</strong> +39 06 12345678</li>
                     <li><strong>Orari di apertura:</strong> Lun - Ven: 9:00 - 18:00</li>

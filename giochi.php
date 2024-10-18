@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connessione al database
 require_once('connessione.php'); // Inserisci il tuo file di connessione qui
 
@@ -37,6 +38,7 @@ $result = $connessione->query($query);
             <li><a href="offerte.php">Offerte</a></li>
             <li><a href="faq.php">FAQ</a></li>
             <li><a href="contatti.php">Contatti</a></li>
+            <li><a href="carrello.php">Carrello (<?php echo isset($_SESSION['carrello']) ? count($_SESSION['carrello']) : 0; ?>)</a></li>
             <?php if(isset($_SESSION['statoLogin'])) : ?>
                 <li><a href="logout.php">Logout</a></li>
             <?php else: ?>
@@ -84,10 +86,10 @@ $result = $connessione->query($query);
                         <p>Prezzo: €<?php echo number_format($row['prezzo_attuale'], 2); ?></p>
                         <p>Genere: <?php echo $row['genere']; ?></p>
                         <p>Anno di rilascio: <?php echo date('Y', strtotime($row['data_rilascio'])); ?></p>  <!-- estraiamo solo l'anno -->
-                        <form method="POST" action="carrello.php">
+                        <form method="POST" action="aggiungi-carrello.php">
                             <input type="hidden" name="gioco" value="<?php echo $row['nome']; ?>">
                             <input type="hidden" name="prezzo" value="<?php echo $row['prezzo_attuale']; ?>">
-                            <button type="submit">Aggiungi al Carrello</button>
+                            <button type="submit"name="codice" value="<?php echo $row['codice']?>">Aggiungi al Carrello</button>
                         </form>
                     </div>
                 <?php endwhile; ?>
