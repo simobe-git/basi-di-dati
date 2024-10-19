@@ -1,12 +1,17 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo del documento */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 /*BARRA DI NAVIGAZIONE*/
@@ -25,7 +30,6 @@ body {
     z-index: 1000; /* Assicura che rimanga sopra gli altri elementi */
 }
 
-/*BARRA DI NAVIGAIONE*/
 .navbar .logo a {
     color: #fff;
     font-size: 22px;
@@ -86,74 +90,75 @@ body {
     transition: transform 0.3s;
 }
 
-
-/*LISTA ELEMENTI*/
-h1 {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: 40px auto;
-    padding: 0 20px;
-    max-width: 1200px;
-}
-
-.product-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+/* Dettagli del prodotto */
+.product-details {
+    max-width: 800px; /* Ridotto rispetto a 1200px */
+    margin: 100px auto 20px; /* Margine per spostare sotto la navbar */
     padding: 20px;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-item:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.product-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.product-item img {
+.product-image {
+    flex: 2.5;
+    padding-right: 20px;
+}
+
+.product-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 15px;
 }
 
-.product-item h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #333;
+.product-details h1{
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
 }
 
-.price {
-    margin: 10px 0;
+.product-info {
+    flex: 2;
+    padding-left: 20px;
 }
 
-.current-price {
-    font-size: 1.4em;
-    color: #27ae60;
-    font-weight: bold;
+.product-info p {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
-.original-price {
-    font-size: 1.2em;
-    color: #aaa;
-    text-decoration: line-through;
-    margin-left: 10px;
-}
-
-
-button {
+.product-info button {
+    padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.product-info button:hover {
     background-color: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .product-content {
+        flex-direction: column;
+    }
+
+    .product-image {
+        padding-right: 0;
+    }
+
+    .product-info {
+        padding-left: 0;
+    }
 }
