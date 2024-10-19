@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 16, 2024 alle 17:48
+-- Creato il: Ott 19, 2024 alle 15:29
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -314,7 +314,7 @@ CREATE TABLE `videogiochi` (
   `data_rilascio` date NOT NULL,
   `id_pegi` int(5) NOT NULL,
   `nome_studio` varchar(30) NOT NULL,
-  `nome_editore` varchar(30) NOT NULL
+  `nome_editore` varchar(30) NOT NULL,
   `immagine` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -323,11 +323,18 @@ CREATE TABLE `videogiochi` (
 --
 
 INSERT INTO `videogiochi` (`codice`, `nome`, `lingua_originale`, `prezzo_originale`, `prezzo_attuale`, `genere`, `data_rilascio`, `id_pegi`, `nome_studio`, `nome_editore`, `immagine`) VALUES
-(11111, 'Grand Theft Auto IV', 'Italiano', 79.99, 79.99, 'Azione', '2014-10-02', 3, 'Tencent', 'Codemasters', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1726606628'),
-(11112, 'Counter-Strike 2', 'Inglese', 59.99, 59.99, 'Azione', '2015-07-15', 2, 'Konami', 'Sony', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1719426374'),
+(11111, 'Grand Theft Auto IV', 'Italiano', 79.99, 39.99, 'Azione', '2014-10-02', 3, 'Tencent', 'Codemasters', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/header.jpg?t=1721061564'),
+(11112, 'Silent Hill 2', 'Inglese', 45.49, 45.99, 'Azione', '2007-04-30', 5, 'Zynga', 'Codemasters', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2124490/header.jpg?t=1728470029'),
 (11223, 'Far Cry 3', 'Inglese', 84.99, 69.99, 'Avventura', '2018-12-18', 3, 'SEGA', 'Microsoft', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/220240/header.jpg?t=1682960396'),
 (43712, 'Fallout 4', 'Francese', 84.99, 79.99, 'Avventura', '2020-02-04', 4, 'SEGA', 'Microsoft', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/377160/header.jpg?t=1726758475'),
-(55321, 'FC 25', 'Italiano', 74.49, 74.00, 'Sport', '2024-09-10', 1, 'EA', 'Codemasters', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2669320/header.jpg?t=1728642725');
+(44296, 'F1 24', 'Inglese', 69.00, 54.00, 'Sport', '2024-05-31', 1, 'EA', 'Codemasters', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2488620/header.jpg?t=1728991222'),
+(44846, 'Farming Simulator 2025', 'Italiano', 49.99, 49.99, 'Simulazione', '2024-11-12', 2, 'SEGA', 'Nintendo', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/header.jpg?t=1729164033'),
+(45175, 'MotoGP 24', 'Italiano', 49.99, 47.49, 'Sport', '2024-05-02', 1, 'Konami', 'Microsoft', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2581700/header.jpg?t=1725034604'),
+(51341, 'Counter-Strike 2', 'Italiano', 39.99, 19.99, 'Azione', '2014-08-21', 4, 'Tencent', 'Ubisoft', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1719426374'),
+(55321, 'FC 25', 'Italiano', 74.49, 74.99, 'Sport', '2024-09-10', 1, 'EA', 'Codemasters', 'https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2669320/header.jpg?t=1728642725'),
+(56711, 'Grand Theft Auto V', 'Inglese', 79.99, 59.99, 'Azione', '2015-10-01', 5, 'SEGA', 'Codemasters', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1726606628'),
+(77620, 'Forza Horizon 5', 'Francese', 59.99, 49.99, 'Simulazione', '2021-11-09', 2, 'Konami', 'Codemasters', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg?t=1727883919'),
+(83019, 'Football Manager 2024', 'Inglese', 69.99, 34.49, 'Sport', '2023-11-06', 1, 'EA', 'Sony', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2252570/header.jpg?t=1702984758');
 
 --
 -- Indici per le tabelle scaricate
@@ -432,7 +439,7 @@ ALTER TABLE `pegi`
 -- AUTO_INCREMENT per la tabella `videogiochi`
 --
 ALTER TABLE `videogiochi`
-  MODIFY `codice` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55322;
+  MODIFY `codice` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83020;
 
 --
 -- Limiti per le tabelle scaricate
