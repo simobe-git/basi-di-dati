@@ -64,10 +64,11 @@ $result2 = $connessione->query($sql2);
             <li><a href="carrello.php">Carrello (<?php echo isset($_SESSION['carrello']) ? count($_SESSION['carrello']) : 0; ?>)</a></li>
             <?php if(isset($_SESSION['statoLogin'])) : ?>
                 <li><a href="logout.php">Logout</a></li>
+                <li><a href="scrivi_recensioni.php">Recensioni</a></li>
             <?php else: ?>
                 <li><a href="login.php">Login</a></li>
+                <li><a href="visualizza_recensioni.php">Recensioni</a></li>
             <?php endif; ?>
-            <li><a href="visualizza_recensioni.php">Recensioni</a></li>
         </ul>
     </nav>
 
@@ -138,6 +139,8 @@ $result2 = $connessione->query($sql2);
                             <input type="hidden" name="gioco" value="<?php echo $row['nome']; ?>">
                             <input type="hidden" name="prezzo" value="<?php echo $row['prezzo_attuale']; ?>">
                             <button type="submit"name="codice" value="<?php echo $row['codice']?>">Acquista</button>
+                        </form>
+                        <form method="POST" action="dettagli.php">
                             <button type="submit"name="codice" value="<?php echo $row['codice']?>">Dettagli</button>
                         </form>
                     </div>
