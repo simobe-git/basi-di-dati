@@ -17,7 +17,7 @@ $result = mysqli_query($connessione,$sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutti gli Articoli del Negozio</title>
-    <link rel="stylesheet" href="giochi.css">
+    <link rel="stylesheet" href="offerte.css">
 </head>
 <body>
     <!-- Barra di navigazione -->

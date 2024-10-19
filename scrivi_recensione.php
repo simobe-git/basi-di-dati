@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['statoLogin'])) {
     die("Devi essere loggato per scrivere una recensione.");
 }
 
-include 'db_connect.php';
+include 'connessione.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_SESSION['email'];

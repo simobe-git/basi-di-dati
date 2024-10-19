@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['codice'])) {
 
     // Se il gioco è già nel carrello, incrementa la quantità, altrimenti aggiungilo
     if (isset($_SESSION['carrello'][$codice])) {
-        $_SESSION['carrello'][$codice]['quantita']++;
+        
     } else {
         $_SESSION['carrello'][$codice] = [
             'nome' => $nome,

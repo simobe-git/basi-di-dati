@@ -64,7 +64,7 @@ $result2 = $connessione->query($sql2);
             <li><a href="carrello.php">Carrello (<?php echo isset($_SESSION['carrello']) ? count($_SESSION['carrello']) : 0; ?>)</a></li>
             <?php if(isset($_SESSION['statoLogin'])) : ?>
                 <li><a href="logout.php">Logout</a></li>
-                <li><a href="scrivi_recensioni.php">Recensioni</a></li>
+                <li><a href="scrivi_recensione.php">Recensioni</a></li>
             <?php else: ?>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="visualizza_recensioni.php">Recensioni</a></li>
