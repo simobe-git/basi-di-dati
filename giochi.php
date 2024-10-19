@@ -21,6 +21,29 @@ $query .= " ORDER BY $ordina_per $direzione";
 
 // Esecuzione della query
 $result = $connessione->query($query);
+
+//-------------------------------
+$editore_selezionato = isset($_GET['editore']) ? $_GET['editore'] : '';
+
+$sql1 = "SELECT * FROM videogiochi WHERE 1";
+
+if (!empty($editore_selezionato)) {
+    $sql1 .= " AND nome_editore = '" . $connessione->real_escape_string($editore_selezionato) . "'";
+}
+
+$result1 = $connessione->query($sql1);
+
+//---------------------------------------------
+$pegi_selezionato = isset($_GET['pegi']) ? $_GET['pegi'] : '';
+
+$sql2 = "SELECT * FROM videogiochi WHERE 1";
+
+if (!empty($pegi_selezionato)) {
+    $sql2 .= " AND id_pegi = '" . $connessione->real_escape_string($pegi_selezionato) . "'";
+}
+
+$result2 = $connessione->query($sql2);
+//----------------------------------------------
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +67,7 @@ $result = $connessione->query($query);
             <?php else: ?>
                 <li><a href="login.php">Login</a></li>
             <?php endif; ?>
+            <li><a href="visualizza_recensioni.php">Recensioni</a></li>
         </ul>
     </nav>
 
@@ -73,7 +97,31 @@ $result = $connessione->query($query);
             <!-- Aggiungi altri generi se necessario -->
         </select>
 
-        <button type="submit">Ordina</button>
+        <label for="editore">Seleziona Editore:</label>       <!--NUOVA PARTE-->
+        <select name="editore" id="editore" style="border-radius: 10px;">
+            <option value="">Tutti gli editori</option>
+            <?php
+            $result_editori = $connessione->query("SELECT DISTINCT nome_editore FROM videogiochi");
+            while ($editore = $result_editori->fetch_assoc()) {
+                echo "<option value='" . $editore['nome_editore'] . "'>" . $editore['nome_editore'] . "</option>";
+            }
+            ?>
+        </select>
+
+        <form method="GET" action="giochi.php">
+        <!-- Filtro per PEGI -->
+        <label for="pegi">Seleziona PEGI:</label>
+        <select name="pegi" id="pegi" style="border-radius: 10px;">
+            <option value="">Tutte le età</option>
+            <?php
+            $result_pegi = $connessione->query("SELECT DISTINCT id, eta_minima FROM pegi");
+            while ($pegi = $result_pegi->fetch_assoc()) {
+                echo "<option value='" . $pegi['id'] . "'>PEGI " . $pegi['eta_minima'] . "+</option>";
+            }
+            ?>
+        </select>
+
+        <button type="submit" name="submit">Ordina</button>
     </form>
 
     <main>
