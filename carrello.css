@@ -1,93 +1,191 @@
-/* Stile base per il corpo della pagina */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo del documento */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-
-/*BARRA DI NAVIGAZIONE*/
+/* Barra di navigazione */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-color: #000;
-    border-radius: 5px; /* Riduzione dei bordi arrotondati */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    position: fixed; /* Rende la barra di navigazione fissa */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Assicura che rimanga sopra gli altri elementi */
-}
-
-.navbar .logo a {
     color: #fff;
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-    border: 2px solid #fff;
-    padding: 5px 12px;
-    border-radius: 8px; /* Riduzione dei bordi arrotondati */
-    transition: background-color 0.3s, color 0.3s;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.navbar .logo a:hover {
-    background-color: #ff6347;
-    color: #000;
+.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
 }
 
 .nav-links li {
-    border: 2px solid transparent;
-    border-radius: 8px; /* Riduzione dei bordi arrotondati */
-    transition: background-color 0.3s, border-color 0.3s;
+    margin-left: 20px;
 }
 
 .nav-links a {
-    color: #fff;
     text-decoration: none;
+    color: #fff;
     font-size: 18px;
-    padding: 8px 15px;
-    display: block;
-    transition: color 0.3s, background-color 0.3s;
-}
-
-.nav-links li:hover {
-    background-color: #1a1a1a;
-    border-color: #ff6347;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ff6347;
+    color: #f4d03f;
 }
 
 .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+    display: none; /* Nasconde il menu hamburger per ora */
 }
 
-.hamburger-menu span {
-    width: 30px;
-    height: 3px;
+
+/* Stile del carrello */
+.carrello-titolo {
+    text-align: center;
+    margin-top: 80px; /* Spazio per la navbar */
+    font-size: 28px;
+}
+
+.carrello-lista {
+    list-style: none;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; /* Centra la lista orizzontalmente */
     background-color: #fff;
-    margin: 5px 0;
-    transition: transform 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.carrello-titolo{
-    margin-top: 3em;
+.carrello-prodotto {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center; /* Centra il contenuto all'interno dell'elemento */
+}
+
+.carrello-prodotto:last-child {
+    border-bottom: none; /* Rimuove il bordo dall'ultimo elemento */
+}
+
+.dettagli-prodotto {
+    padding: 10px 0; /* Aggiunge spazio sopra e sotto il contenuto */
+    display: inline-block; /* Permette il centramento */
+    text-align: left; /* Mantiene il testo a sinistra dentro i dettagli */
+}
+
+.prodotto-nome {
+    font-size: 22px;
+    margin-bottom: 5px; /* Spazio sotto il nome del prodotto */
+}
+
+.prodotto-prezzo,
+.prodotto-quantita,
+.prodotto-totale {
+    font-size: 18px;
+}
+
+.form-rimuovi {
+    display: inline; /* Mantiene il form inline per il pulsante Rimuovi */
+}
+
+.pulsante-rimuovi {
+    background-color: #ff4d4d; /* Rosso per il pulsante Rimuovi */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pulsante-rimuovi:hover {
+    background-color: #e60000; /* Colore più scuro al passaggio del mouse */
+}
+
+.totale-complessivo {
+    font-size: 22px;
+    text-align: center; /* Centra il totale complessivo */
+    margin: 20px 0; /* Margine sopra e sotto */
+}
+
+.pulsante-checkout {
+    display: block;
+    margin: 20px auto;
+    padding: 8px 15px; /* Aumenta la dimensione del padding per un aspetto più grande */
+    max-width: 250px;
+    background-color: #28a745; /* Verde per il pulsante Checkout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Aumenta la dimensione del testo */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per profondità */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transizione per l'hover */
+}
+
+.pulsante-checkout:hover {
+    background-color: #218838; /* Colore più scuro al passaggio del mouse */
+    transform: translateY(-2px); /* Leggero sollevamento al passaggio del mouse */
+}
+
+.pulsante-checkout:active {
+    transform: translateY(0); /* Ripristina la posizione al clic */
+}
+
+
+.link-torna {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.link-torna:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .carrello-lista {
+        padding: 15px;
+    }
+
+    .carrello-titolo {
+        font-size: 24px;
+    }
+
+    .prodotto-nome,
+    .prodotto-prezzo,
+    .prodotto-quantita,
+    .prodotto-totale {
+        font-size: 16px;
+    }
+
+    .pulsante-checkout {
+        width: 100%; /* Fai in modo che il pulsante occupi tutta la larghezza su schermi più piccoli */
+    }
 }
 

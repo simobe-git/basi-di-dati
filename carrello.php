@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rimuovi'])) {
         unset($_SESSION['carrello']);
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -59,9 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rimuovi'])) {
     <p class="carrello-vuoto">Il carrello è vuoto.</p>
 <?php else: ?>
     <ul class="carrello-lista">
-        <?php foreach ($carrello as $codice => $prodotto): ?>
-            <li class="carrello-prodotto">
-                <h3 class="prodotto-nome"><?php echo $prodotto['nome']; ?></h3>
+    <?php foreach ($carrello as $codice => $prodotto): ?>
+        <li class="carrello-prodotto">
+            <div class="dettagli-prodotto">
+                <h3 class="prodotto-nome"><?php echo htmlspecialchars($prodotto['nome']); ?></h3>
                 <p class="prodotto-prezzo">Prezzo: €<?php echo number_format($prodotto['prezzo'], 2); ?></p>
                 <p class="prodotto-quantita">Quantità: <?php echo $prodotto['quantita']; ?></p>
                 <p class="prodotto-totale">Totale: €<?php echo number_format($prodotto['prezzo'] * $prodotto['quantita'], 2); ?></p>
@@ -69,9 +71,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rimuovi'])) {
                     <input type="hidden" name="codice" value="<?php echo $codice; ?>">
                     <button type="submit" name="rimuovi" class="pulsante-rimuovi">Rimuovi</button>
                 </form>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
 
     <p class="totale-complessivo"><strong>Totale complessivo:</strong> €<?php
         $totale = 0;
