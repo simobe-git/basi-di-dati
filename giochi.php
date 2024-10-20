@@ -127,7 +127,9 @@ $result = $connessione->query($query);
                             <input type="hidden" name="gioco" value="<?php echo $row['nome']; ?>">
                             <input type="hidden" name="prezzo" value="<?php echo $row['prezzo_attuale']; ?>">
                             <button type="submit" name="codice" value="<?php echo $row['codice']?>">Acquista</button>
-                            <button type="submit" name="codice" value="<?php echo $row['codice']?>">Dettagli</button>
+                        </form>
+                        <form method="POST" action="dettagli.php">
+                            <button type="submit"name="codice" value="<?php echo $row['codice']?>">Dettagli</button>
                         </form>
                     </div>
                 <?php endwhile; ?>
