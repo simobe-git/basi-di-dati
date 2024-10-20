@@ -1,0 +1,258 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/*BARRA DI NAVIGAZIONE*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    border-radius: 5px; /* Riduzione dei bordi arrotondati */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Rende la barra di navigazione fissa */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assicura che rimanga sopra gli altri elementi */
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #fff;
+    padding: 5px 12px;
+    border-radius: 8px; /* Riduzione dei bordi arrotondati */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .logo a:hover {
+    background-color: #ff6347;
+    color: #000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    border: 2px solid transparent;
+    border-radius: 8px; /* Riduzione dei bordi arrotondati */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links li:hover {
+    background-color: #1a1a1a;
+    border-color: #ff6347;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: transform 0.3s;
+}
+
+/* Stile del carrello */
+.carrello-titolo {
+    text-align: center;
+    margin-top: 80px; /* Spazio per la navbar */
+    font-size: 28px;
+}
+
+.carrello-lista {
+    list-style: none;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto; /* Centra la lista orizzontalmente */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carrello-prodotto {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center; /* Centra il contenuto all'interno dell'elemento */
+}
+
+.carrello-prodotto:last-child {
+    border-bottom: none; /* Rimuove il bordo dall'ultimo elemento */
+}
+
+.dettagli-prodotto {
+    padding: 10px 0; /* Aggiunge spazio sopra e sotto il contenuto */
+    display: inline-block; /* Permette il centramento */
+    text-align: left; /* Mantiene il testo a sinistra dentro i dettagli */
+}
+
+.prodotto-nome {
+    font-size: 22px;
+    margin-bottom: 5px; /* Spazio sotto il nome del prodotto */
+}
+
+.prodotto-prezzo,
+.prodotto-quantita,
+.prodotto-totale {
+    font-size: 18px;
+}
+
+.form-rimuovi {
+    display: inline; /* Mantiene il form inline per il pulsante Rimuovi */
+}
+
+.pulsante-rimuovi {
+    background-color: #ff4d4d; /* Rosso per il pulsante Rimuovi */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pulsante-rimuovi:hover {
+    background-color: #e60000; /* Colore più scuro al passaggio del mouse */
+}
+
+.totale-complessivo {
+    font-size: 22px;
+    text-align: center; /* Centra il totale complessivo */
+    margin: 20px 0; /* Margine sopra e sotto */
+}
+
+.pulsante-checkout {
+    display: block;
+    margin: 20px auto;
+    padding: 8px 15px; /* Aumenta la dimensione del padding per un aspetto più grande */
+    max-width: 250px;
+    background-color: #28a745; /* Verde per il pulsante Checkout */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Aumenta la dimensione del testo */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiungi ombra per profondità */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transizione per l'hover */
+}
+
+.pulsante-checkout:hover {
+    background-color: #218838; /* Colore più scuro al passaggio del mouse */
+    transform: translateY(-2px); /* Leggero sollevamento al passaggio del mouse */
+}
+
+.pulsante-checkout:active {
+    transform: translateY(0); /* Ripristina la posizione al clic */
+}
+
+
+.link-torna {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 50px;
+}
+
+.link-torna:hover {
+    text-decoration: underline;
+}
+
+/*FORM PAGAMENTO*/
+
+.titolo-pagamento {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.form-pagamento {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-pagamento label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-pagamento input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.scadenza-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.scadenza, .cvv {
+    flex: 1;
+}
+
+.scadenza {
+    margin-right: 10px;
+}
+
+.pulsante-pagamento {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pulsante-pagamento:hover {
+    background-color: #218838;
+}
+
+.pulsante-pagamento:active {
+    background-color: #1e7e34;
+}
+
