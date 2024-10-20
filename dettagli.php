@@ -19,6 +19,10 @@ if(mysqli_num_rows($result) == 1){
     echo '<p>Nessun prodotto trovato</p>'. mysqli_error($connessione,$result);
 }
 
+// Ricerca dei contenuti aggiuntivi associati al videogioco
+$sql_contenuti = "SELECT * FROM contenuti_aggiuntivi WHERE codice_videogioco=$id";
+$result_contenuti = mysqli_query($connessione, $sql_contenuti);
+
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +80,28 @@ if(mysqli_num_rows($result) == 1){
                 </form>
             </div>
         </div>
-    </div>
     
+
+    <!-- Sezione per i Contenuti Aggiuntivi -->
+    <div class="additional-content">
+        <h2>Contenuti Aggiuntivi</h2>
+        <?php if (mysqli_num_rows($result_contenuti) > 0): ?>
+            <ul>
+                <?php while ($contenuto = mysqli_fetch_assoc($result_contenuti)): ?>
+                    <li>
+                        <h3><?php echo $contenuto['nome']; ?></h3><br>
+                        <!--Se serve aggiugere descrizone-->
+                        <div class="purchase-info">
+                            <p class="prezzo">Prezzo: €<?php echo number_format($row['prezzo_attuale'], 2); ?></p>
+                            <button type="submit" class="btn-aggiungi-contenuto" name="codice" value="<?php echo $row['codice']?>">Acquista</button>
+                        </div>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        <?php else: ?>
+            <p>Non ci sono contenuti aggiuntivi disponibili per questo gioco.</p>
+        <?php endif; ?>
+    </div>
+    </div>
 </body>
 </html>

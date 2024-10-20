@@ -148,17 +148,83 @@ body {
     background-color: #0056b3;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .product-content {
-        flex-direction: column;
-    }
+/* Sezione Contenuti Aggiuntivi */
+.additional-content {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .product-image {
-        padding-right: 0;
-    }
+.additional-content h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-    .product-info {
-        padding-left: 0;
-    }
+.additional-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.additional-content li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.additional-content li h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-align: center;
+}
+
+.additional-content li p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.additional-content li strong {
+    font-size: 18px;
+    color: #000;
+}
+
+.additional-content p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+
+.btn-aggiungi-contenuto {
+    padding: 10px 15px;
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-aggiungi-contenuto:hover {
+    background-color: #218838; /* Verde più scuro al passaggio del mouse */
+}
+.purchase-info {
+    display: flex;
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: space-between; /* Spazia gli elementi in modo uniforme */
+    margin-top: 15px; /* Spazio sopra per separare dal resto del contenuto */
+}
+
+.prezzo {
+    font-size: 20px; /* Dimensione del font del prezzo */
+    font-weight: bold; /* Grassetto per evidenziare il prezzo */
+    margin-right: 15px; /* Spazio a destra per separare dal pulsante */
 }
